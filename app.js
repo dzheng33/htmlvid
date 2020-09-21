@@ -1,33 +1,22 @@
-const videoElement = document.getElementById('video');
-const transcriptElement = document.getElementById('transcript');
-const captionElement = document.querySelectorAll('span');
-
-
-// Highlight //
+const video = document.querySelector("#video");
+const captions = document.querySelector("#captions");
+const sentence = document.querySelectorAll('span');
 
 $('#video').on('timeupdate', () => {
-        for (let i = 0; i < captionElement.length; i++) {
-                let time = videoElement.currentTime;
-                let start = captionElement[i].getAttribute(
-                        'data-start');
-                let end = captionElement[i].getAttribute(
-                        'data-end');
+        for (let i = 0; i < sentence.length; i++) {
+                let time = video.currentTime;
+                let start = sentence[i].getAttribute('data-start');
+                let end = sentence[i].getAttribute('data-end');
                 if (time > start && time < end) {
-                        captionElement[i].className =
-                                'highlight';
+                        sentence[i].className ='highlight';
                 } else {
-                        captionElement[i].className = "";
+                        sentence[i].className = "";
                 }
         }
 });
 
-
-
-// Click //
-
-transcriptElement.addEventListener('click', (event) => {
+captions.addEventListener('click', (event) => {
         if (event.target.tagName === 'SPAN') {
-                videoElement.currentTime = event.target.getAttribute(
-                        'data-start');
+                video.currentTime = event.target.getAttribute('data-start');
         }
 });

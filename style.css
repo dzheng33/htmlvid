@@ -1,3 +1,40 @@
 .highlight {
-    color: blue;
+    background-color: yellow;
+}
+
+body {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#captions {
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+#video {
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    body {
+        width: 80%;
+    }
+
+    #caption {
+        font-weight: 600;
+    }
+}
+
+@media(min-width: 1024px) {
+    body {
+        width: 60%;
+    }
+
+    #caption {
+        font-weight: 700;
+    }
 }
